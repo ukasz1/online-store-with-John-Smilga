@@ -30,6 +30,7 @@ const Filters = () => {
   return <Wrapper>
     <div className='content'>
       <form onSubmit={e => e.preventDefault()}>
+
         {/* search input */}
         <div className='form-control'>
           <input
@@ -42,6 +43,7 @@ const Filters = () => {
           />
         </div>
         {/* end search input */}
+
         {/* categories */}
         <div className='form-control'>
           <h5>category</h5>
@@ -61,6 +63,7 @@ const Filters = () => {
           }</div>
         </div>
         {/* end of categories */}
+
         {/* companies */}
         <div className='form-control'>
           <h5>company</h5>
@@ -73,9 +76,8 @@ const Filters = () => {
           </select>
         </div>
         {/* end of companies */}
-        {/* 
-          colors 
-        */}
+
+        {/* colors */}
         <div className='form-control'>
           <h5>colors</h5>
           <div className='colors'>
@@ -105,10 +107,36 @@ const Filters = () => {
             }
           </div>
         </div>
-        {/* 
-          end of colors 
-        */}
+        {/* end of colors */}
+
+        {/* price */}
+        <div className='form-control'>
+          <h5>price</h5>
+          <p className='price'>{formatPrice(price)}</p>
+          <input
+            type="range"
+            name="price"
+            min={min_price}
+            max={max_price}
+            onChange={updateFilters}
+            value={price}
+          />
+        </div>
+        {/* end of price */}
+
+        {/* shipping */}
+        <div className='form-control shipping'>
+          <label htmlFor='shipping'>free shipping</label>
+          <input type="checkbox" name="shipping" id="shipping" onChange={updateFilters} checked={shipping} />
+        </div>
+        {/* end of shipping */}
       </form>
+
+      <button type='button' className='clear-btn' onClick={clearFilters}>
+        {' '}
+        clear filters
+      </button>
+
     </div >
   </Wrapper >
 }

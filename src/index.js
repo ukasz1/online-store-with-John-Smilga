@@ -27,6 +27,3 @@ ReactDOM.render(
   </Auth0Provider>
 
   , document.getElementById('root'))
-
-  // dev-9a9kx51c.eu.auth0.com
-  // LEVrIDiSTTlnNDWkeLZyuvwid7g5UL2W

@@ -26,6 +26,7 @@ const SingleProductPage = () => {
 
   useEffect(() => { //get product data
     fetchSingleProduct(`${url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
 
   useEffect(() => { //if error take me back after 3 seconds
@@ -34,6 +35,7 @@ const SingleProductPage = () => {
         history.push('/');
       }, 3000);
     }
+    // eslint-disable-next-line
   }, [error]);
 
   if (loading) {
